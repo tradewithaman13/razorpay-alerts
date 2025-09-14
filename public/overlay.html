@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Donation Overlay</title>
+  <link rel="stylesheet" href="/overlay.css"/>
+</head>
+<body>
+  <div id="overlay-root">
+    <div id="header">Live Donations</div>
+
+    <!-- persistent scrollable list -->
+    <div id="alerts-list" aria-live="polite"></div>
+
+    <!-- popup container for animated big alerts -->
+    <div id="popup-container"></div>
+  </div>
+
+  <!-- confetti library -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/overlay.js"></script>
+</body>
+</html>

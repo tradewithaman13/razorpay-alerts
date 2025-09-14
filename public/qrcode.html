@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"/><title>QR</title></head>
+<body style="display:flex;align-items:center;justify-content:center;height:100vh;background:transparent">
+  <div id="container">
+    <img id="qr" alt="QR code" />
+    <div style="text-align:center;margin-top:8px"><small>Scan to donate</small></div>
+  </div>
+  <script>
+    const params = new URLSearchParams(location.search);
+    const url = params.get('url') || '';
+    const img = document.getElementById('qr');
+    if (!url) img.alt = 'Open this page with ?url=PAYMENT_LINK';
+    else {
+      img.src = 'https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=' + encodeURIComponent(url);
+    }
+  </script>
+</body>
+</html>

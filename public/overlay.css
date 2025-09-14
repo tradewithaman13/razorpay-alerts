@@ -1,0 +1,73 @@
+/* overlay.css */
+html,body { margin:0; padding:0; background:transparent; font-family: Arial, sans-serif; }
+#overlay-root {
+  width:100%;
+  max-width:2560px;
+  margin:0 auto;
+  pointer-events: none; /* click-through by default */
+  color: #fff;
+}
+
+/* header — clickable when you need to interact (set pointer-events: auto via dev if needed) */
+#header {
+  display:inline-block;
+  background: rgba(0,0,0,0.6);
+  padding:8px 12px;
+  border-radius:10px;
+  font-weight:700;
+  margin:10px;
+  pointer-events: auto;
+}
+
+/* persistent list at bottom-left (adjust as you like) */
+#alerts-list {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  width: 480px;
+  max-height: 420px;
+  overflow-y: auto;
+  display:flex;
+  flex-direction: column;
+  gap:8px;
+  padding:10px;
+  pointer-events: auto; /* allow scroll when you interact from OBS -> right-click Interact */
+}
+
+/* single alert card */
+.alert-card {
+  background: rgba(0,0,0,0.5);
+  border-radius: 10px;
+  padding:10px;
+  display:flex;
+  gap:10px;
+  align-items:center;
+  border:1px solid rgba(255,255,255,0.06);
+}
+
+.alert-avatar {
+  width:44px; height:44px; border-radius:50%;
+  background:rgba(255,255,255,0.06); display:flex; align-items:center; justify-content:center; font-weight:700;
+}
+
+.alert-main { flex:1; }
+.alert-name { font-weight:700; font-size:14px; }
+.alert-meta { font-size:12px; opacity:0.85; }
+
+/* popup (big animated alert) */
+#popup-container {
+  position:absolute;
+  right: 30px;
+  top: 60px;
+  width: 540px;
+  pointer-events: none;
+}
+.big-popup {
+  background: linear-gradient(90deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+  border-radius: 12px;
+  padding: 18px;
+  color: #fff;
+  font-weight:700;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+}
+
